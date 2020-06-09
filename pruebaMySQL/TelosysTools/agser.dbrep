@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Telosys Database Repository --><root>
+<tableList databaseId="1" databaseName="agser" databaseProductName="MySQL" generation="2020-06-09 11:50:27">
+<table catalog="agser" databaseComment="" databaseType="TABLE" javaBean="Jobs" name="Jobs" schema="">
+<column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="id" javaType="java.lang.Integer" jdbcTypeCode="4" label="Id" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="true" dbPosition="2" dbSize="100" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="100" notEmpty="true" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="image" dbNotNull="false" dbPosition="3" dbSize="100" dbTypeName="VARCHAR" inputType="text" javaName="image" javaType="java.lang.String" jdbcTypeCode="12" label="Image" maxLength="100" notNull="false" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="providerXjob_ibfk_2" id="LINK_FK_providerXjob_ibfk_2_I" inverseSideOf="LINK_FK_providerXjob_ibfk_2_O" javaName="listOfProviderxjob" javaType="java.util.List" joinTableName="" mappedBy="jobs" optional="" owningSide="false" sourceTableName="Jobs" targetEntity="Providerxjob" targetTableName="providerXjob" used="true"/>
+</table>
+<table catalog="agser" databaseComment="" databaseType="TABLE" javaBean="Providers" name="Providers" schema="">
+<column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="id" javaType="java.lang.Integer" jdbcTypeCode="4" label="Id" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="userId" dbNotNull="true" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="userid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Userid" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="phone" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="phone" javaType="java.lang.Integer" jdbcTypeCode="4" label="Phone" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="description" dbNotNull="true" dbPosition="4" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="description" javaType="java.lang.String" jdbcTypeCode="12" label="Description" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="address" dbNotNull="true" dbPosition="5" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="address" javaType="java.lang.String" jdbcTypeCode="12" label="Address" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+<column dateType="DT" dbComment="" dbDefaultValue="" dbName="createdAt" dbNotNull="true" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdat" javaType="java.util.Date" jdbcTypeCode="93" label="Createdat" notNull="true" selected="true"/>
+<column dateType="DT" dbComment="" dbDefaultValue="" dbName="updatedAt" dbNotNull="true" dbPosition="7" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedat" javaType="java.util.Date" jdbcTypeCode="93" label="Updatedat" notNull="true" selected="true"/>
+<fk name="Providers_ibfk_1">
+<fkcol colname="userId" colref="id" deferrable="7" deleterule="1" sequence="1" tablename="Providers" tableref="Users" updaterule="1"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="Providers_ibfk_1" id="LINK_FK_Providers_ibfk_1_O" inverseSideOf="" javaName="users" javaType="Users" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="Providers" targetEntity="Users" targetTableName="Users" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="userId" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="providerXjob_ibfk_1" id="LINK_FK_providerXjob_ibfk_1_I" inverseSideOf="LINK_FK_providerXjob_ibfk_1_O" javaName="listOfProviderxjob" javaType="java.util.List" joinTableName="" mappedBy="providers" optional="" owningSide="false" sourceTableName="Providers" targetEntity="Providerxjob" targetTableName="providerXjob" used="true"/>
+</table>
+<table catalog="agser" databaseComment="" databaseType="TABLE" javaBean="Sequelizemeta" name="SequelizeMeta" schema="">
+<column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+</table>
+<table catalog="agser" databaseComment="" databaseType="TABLE" javaBean="Users" name="Users" schema="">
+<column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="id" javaType="java.lang.Integer" jdbcTypeCode="4" label="Id" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="name" dbNotNull="false" dbPosition="2" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="name" javaType="java.lang.String" jdbcTypeCode="12" label="Name" maxLength="255" notNull="false" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="email" dbNotNull="true" dbPosition="3" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="email" javaType="java.lang.String" jdbcTypeCode="12" label="Email" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="password" dbNotNull="true" dbPosition="4" dbSize="255" dbTypeName="VARCHAR" inputType="text" javaName="password" javaType="java.lang.String" jdbcTypeCode="12" label="Password" maxLength="255" notEmpty="true" notNull="true" selected="true"/>
+<column dateType="DT" dbComment="" dbDefaultValue="" dbName="createdAt" dbNotNull="true" dbPosition="5" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="createdat" javaType="java.util.Date" jdbcTypeCode="93" label="Createdat" notNull="true" selected="true"/>
+<column dateType="DT" dbComment="" dbDefaultValue="" dbName="updatedAt" dbNotNull="true" dbPosition="6" dbSize="19" dbTypeName="DATETIME" inputType="" javaName="updatedat" javaType="java.util.Date" jdbcTypeCode="93" label="Updatedat" notNull="true" selected="true"/>
+<link cardinality="OneToMany" cascade="" fetch="DEFAULT" foreignKeyName="Providers_ibfk_1" id="LINK_FK_Providers_ibfk_1_I" inverseSideOf="LINK_FK_Providers_ibfk_1_O" javaName="listOfProviders" javaType="java.util.List" joinTableName="" mappedBy="users" optional="" owningSide="false" sourceTableName="Users" targetEntity="Providers" targetTableName="Providers" used="true"/>
+</table>
+<table catalog="agser" databaseComment="" databaseType="TABLE" javaBean="Providerxjob" name="providerXjob" schema="">
+<column dbComment="" dbDefaultValue="" dbName="id" dbNotNull="true" dbPosition="1" dbPrimaryKey="true" dbSize="10" dbTypeName="INT" inputType="number" javaName="id" javaType="java.lang.Integer" jdbcTypeCode="4" label="Id" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="providerId" dbNotNull="true" dbPosition="2" dbSize="10" dbTypeName="INT" inputType="number" javaName="providerid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Providerid" notNull="true" selected="true"/>
+<column dbComment="" dbDefaultValue="" dbName="jobId" dbNotNull="true" dbPosition="3" dbSize="10" dbTypeName="INT" inputType="number" javaName="jobid" javaType="java.lang.Integer" jdbcTypeCode="4" label="Jobid" notNull="true" selected="true"/>
+<fk name="providerXjob_ibfk_1">
+<fkcol colname="providerId" colref="id" deferrable="7" deleterule="1" sequence="1" tablename="providerXjob" tableref="Providers" updaterule="1"/>
+</fk>
+<fk name="providerXjob_ibfk_2">
+<fkcol colname="jobId" colref="id" deferrable="7" deleterule="1" sequence="1" tablename="providerXjob" tableref="Jobs" updaterule="1"/>
+</fk>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="providerXjob_ibfk_1" id="LINK_FK_providerXjob_ibfk_1_O" inverseSideOf="" javaName="providers" javaType="Providers" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="providerXjob" targetEntity="Providers" targetTableName="Providers" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="providerId" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+<link cardinality="ManyToOne" cascade="" fetch="DEFAULT" foreignKeyName="providerXjob_ibfk_2" id="LINK_FK_providerXjob_ibfk_2_O" inverseSideOf="" javaName="jobs" javaType="Jobs" joinTableName="" mappedBy="" optional="" owningSide="true" sourceTableName="providerXjob" targetEntity="Jobs" targetTableName="Jobs" used="true">
+<joinColumns>
+<joinColumn insertable="false" name="jobId" nullable="true" referencedColumnName="id" unique="false" updatable="false"/>
+</joinColumns>
+</link>
+</table>
+</tableList>
+</root>

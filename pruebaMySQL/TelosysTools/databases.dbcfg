@@ -1,0 +1,15 @@
+<databases defaultId="1" maxId="10">
+  <db id = "1"
+  name = "agser"
+  driver = "com.mysql.cj.jdbc.Driver"
+  url = "jdbc:mysql://localhost:3306/"
+  typeName = "MYSQL"
+  dialect = "org.hibernate.dialect.MySQLDialect"
+  poolSize = "3">
+      <property name="user" value="agser"/>
+      <property name="password" value="agseragser"/>
+      <metadata catalog="!"  schema="agser"
+        table-name-pattern="%" table-types="TABLE  VIEW  "
+            table-name-exclude=""  table-name-include=""  />
+  </db>
+</databases>
